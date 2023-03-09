@@ -1,0 +1,84 @@
+
+body {
+        font-family: Arial, sans-serif;
+        color: rgba(26,122,167,255);
+        background-color: rgb(248, 211, 157);
+        font-family: 'Times New Roman', Times, serif;
+    }
+p{
+   
+    font-size: 30px;
+    
+}
+span{
+    font-size: 20px;
+}
+.container{
+    position: relative;
+    margin: 20px auto;
+    padding: 10px;
+    text-align: center;
+    align-items: center;
+    height: 95vh;
+    width: 80vh;
+    background-color: white;
+    
+}
+.header{
+    height: 80vh;
+}
+li{
+    float: left;
+    list-style: none;
+    margin: 10px 0px;
+    display: block;
+    
+}
+li button {
+    border-radius: 10%;
+    background-color: white;
+    border: 2px solid rgba(26,122,167,255);
+    width: 30px;
+    height: 30px;
+    margin: 10px 20px;
+    justify-items: center;
+    align-items: center;
+    
+}
+textarea{
+    margin: -20px 0;
+    border: 2px solid rgba(26,122,167,255);
+    width: 350px;
+    height: 50px;
+    
+    
+}
+input{
+    border: 2px solid rgba(26,122,167,255);
+    width: 100px;
+    height: 50px;
+    margin: 10px;
+}
+
+.footer{
+    
+}
+.count{
+    float: left;
+    margin: 20px 20px;
+}
+.addNew{
+float: right;
+margin: 20px 0;
+}
+#add-btn{
+    font-size: 25px;
+    color: rgba(26,122,167,255);
+    border: none;
+    background-color: white;
+}
+#add-btn:hover{
+    cursor: pointer;
+    border: 1px solid;
+    border-color: rgba(26,122,167,255);
+}

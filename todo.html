@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./todo.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+        <h1><strong>MONDAY,</strong><small>&nbsp; March 14th</small></h1>
+        <hr>
+        <ul id="todo-list"></ul>
+       </div>
+       
+        
+
+        <hr>
+       <div class="footer">
+        <span class="count">
+        <span id="count">  &nbsp;</span><span>&nbsp;TASKS</span>
+    </span>
+        <span class="addNew">
+       <span>ADDNEW &nbsp;<button id="add-btn" >&nbsp; +   &nbsp;</button></span>
+        </span>
+        </div>
+      </div>
+      <script>
+ const addBtn = document.getElementById("add-btn");
+  const count = document.getElementById("count");
+  count.textContent = "0"; // count 초기값 설정
+
+  // add-btn 클릭시 입력창 추가
+  addBtn.addEventListener("click", function() {
+    const newItem = document.createElement("li");
+
+    const newChcek = document.createElement("button");
+    newItem.appendChild(newChcek);
+
+    const inputBox = document.createElement("textarea");
+    inputBox.type = "text";
+    inputBox.addEventListener("click", function() {
+      inputBox.style.width = "350px";
+      inputBox.style.height = "100px";
+      
+      
+      
+      inputBox.addEventListener("mouseleave", function () {
+          inputBox.style.width = "";
+          inputBox.style.height = "";
+        });
+      inputBox.parentNode.appendChild(completeBtn);
+    });
+    newItem.appendChild(inputBox);
+
+    const goalTimeInput = document.createElement("input");
+    goalTimeInput.type = "time";
+    newItem.appendChild(goalTimeInput);
+
+    const todoList = document.getElementById("todo-list");
+    todoList.appendChild(newItem);
+
+    const deleteBtn = document.createElement("button");
+    newItem.appendChild(deleteBtn);
+    deleteBtn.textContent = "x";
+    deleteBtn.addEventListener("click", function () {
+      newItem.remove();
+      count.textContent = parseInt(count.textContent) - 1; // count 감소
+    });
+
+    count.textContent = parseInt(count.textContent) + 1; // count 증가
+
+    const completeBtn = document.createElement("button");
+  completeBtn.textContent = "끝";
+  completeBtn.addEventListener("click", function() {
+    newChcek.style.backgroundColor = "red";
+    completeBtn.parentElement.removeChild(completeBtn);
+  });
+
+  });
+
+      </script>
+</body>
+</html>
